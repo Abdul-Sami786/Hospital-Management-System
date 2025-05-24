@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" 
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+
+    <!-- Spring Context Configuration -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/applicationContext.xml</param-value>
+    </context-param>
+
+    <!-- Spring Context Loader Listener -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <!-- Spring Dispatcher Servlet -->
+    <servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>*.htm</url-pattern>
+    </servlet-mapping>
+
+    <!-- Session Timeout -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <!-- Custom Servlets -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddPatientServlet</servlet-name>
+        <servlet-class>servlet.AddPatientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddPatientServlet</servlet-name>
+        <url-pattern>/AddPatientServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddBillServlet</servlet-name>
+        <servlet-class>servlet.AddBillServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddBillServlet</servlet-name>
+        <url-pattern>/AddBillServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddRecordServlet</servlet-name>
+        <servlet-class>servlet.AddRecordServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddRecordServlet</servlet-name>
+        <url-pattern>/AddRecordServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddMedicineServlet</servlet-name>
+        <servlet-class>servlet.AddMedicineServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddMedicineServlet</servlet-name>
+        <url-pattern>/AddMedicineServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddStaffServlet</servlet-name>
+        <servlet-class>servlet.AddStaffServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddStaffServlet</servlet-name>
+        <url-pattern>/AddStaffServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddInsuranceServlet</servlet-name>
+        <servlet-class>servlet.AddInsuranceServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddInsuranceServlet</servlet-name>
+        <url-pattern>/AddInsuranceServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    <servlet-name>AddDoctorServlet</servlet-name>
+    <servlet-class>servlet.AddDoctorServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>AddDoctorServlet</servlet-name>
+    <url-pattern>/AddDoctorServlet</url-pattern>
+</servlet-mapping>
+
+
+    <!-- Welcome Page -->
+    <welcome-file-list>
+        <welcome-file>dashboard.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>
